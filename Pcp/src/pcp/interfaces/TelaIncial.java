@@ -1,4 +1,5 @@
 package pcp.interfaces;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -14,19 +15,20 @@ public class TelaIncial extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.setTitle("Cadastro Equipamentos Pixar Harcker Club");
+        
         pnPessoaFisica.setVisible(false);
         pnPessoaJuridica.setVisible(false);
         
-        // desabilitar opçoes do painel equipamento
-        
+
+// desabilitar opçoes do painel equipamento
         rbEquipamentoFisica.setEnabled(false);
         rbEquipamentoJuridica.setEnabled(false);
         tfEquipamentoNome.setEnabled(false);
         taEquipamentoDescricao.setEnabled(false);
         btEquipamentoCadastrar.setEnabled(false);
-        
-   
-        }
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -117,9 +119,19 @@ public class TelaIncial extends javax.swing.JFrame {
 
         btgDoacao.add(rbEquipamentoSim);
         rbEquipamentoSim.setText("Sim");
+        rbEquipamentoSim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbEquipamentoSimActionPerformed(evt);
+            }
+        });
 
         btgDoacao.add(rbEqupamentoNao);
         rbEqupamentoNao.setText("Não");
+        rbEqupamentoNao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbEqupamentoNaoActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Tipo de Pessoa");
 
@@ -480,6 +492,28 @@ public class TelaIncial extends javax.swing.JFrame {
         pnPessoaFisica.setVisible(false);
         pnPessoaJuridica.setVisible(true);
     }//GEN-LAST:event_rbEquipamentoJuridicaActionPerformed
+
+    private void rbEqupamentoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEqupamentoNaoActionPerformed
+        // TODO add your handling code here:
+        tfEquipamentoNome.setEnabled(true);
+        taEquipamentoDescricao.setEnabled(true);
+        btEquipamentoCadastrar.setEnabled(true);
+        rbEquipamentoFisica.setEnabled(false);
+        rbEquipamentoJuridica.setEnabled(false);
+          pnPessoaJuridica.setVisible(false);
+          pnPessoaFisica.setVisible(false);
+
+    }//GEN-LAST:event_rbEqupamentoNaoActionPerformed
+
+    private void rbEquipamentoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEquipamentoSimActionPerformed
+        // TODO add your handling code here:
+        btgPessoa.clearSelection();
+        tfEquipamentoNome.setEnabled(true);
+        taEquipamentoDescricao.setEnabled(true);
+        rbEquipamentoFisica.setEnabled(true);
+        rbEquipamentoJuridica.setEnabled(true);
+        btEquipamentoCadastrar.setEnabled(false);
+    }//GEN-LAST:event_rbEquipamentoSimActionPerformed
 
     /**
      * @param args the command line arguments
