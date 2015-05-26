@@ -27,6 +27,25 @@ public class TelaIncial extends javax.swing.JFrame {
         tfEquipamentoNome.setEnabled(false);
         taEquipamentoDescricao.setEnabled(false);
         btEquipamentoCadastrar.setEnabled(false);
+        
+  // desabilitar Painel de Pessoa Fisica
+       cbxPessoaFisicaNome.setEnabled(false);
+       tfFisicaPessoaCPF.setEnabled(false);
+       tfFisicaPessoaNome.setEnabled(false);
+       tfFisicaPessoaTelefone.setEnabled(false);
+       btFisicaPessoaCadastrarPessoa.setEnabled(false);
+   
+
+ // desabilitar Painel de Pessoa Juridica 
+     cbxPessoaJuridicaNome.setEnabled(false);
+     tfPessoaJuridicaCNPJ.setEnabled(false);
+     tfPessoaJuridicaNomeFantasia.setEnabled(false);
+     tfPessoaJuridicaRazaoSocial.setEnabled(false);
+     tfPessoaJuridicaTelefone.setEnabled(false);
+     btPessoaJuridicaCadastrarEmpresa.setEnabled(false);
+      
+       
+       
 
     }
 
@@ -43,6 +62,8 @@ public class TelaIncial extends javax.swing.JFrame {
         btgPessoa = new javax.swing.ButtonGroup();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
+        btgPessoaCadastro = new javax.swing.ButtonGroup();
+        btgPessoaJuridicaCadastro = new javax.swing.ButtonGroup();
         jSplitPane1 = new javax.swing.JSplitPane();
         pnEquipamento = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -62,32 +83,34 @@ public class TelaIncial extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         pnPessoaFisica = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        cbFisicaPessoaNaoCadastrada = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbxPessoaFisicaNome = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tfFisicaPessoaNome = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        tfFisicaPessoaTelefone = new javax.swing.JFormattedTextField();
         jLabel12 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jButton3 = new javax.swing.JButton();
+        tfFisicaPessoaCPF = new javax.swing.JFormattedTextField();
+        btFisicaPessoaCadastrarPessoa = new javax.swing.JButton();
+        cbFisicaPessoaCadastrada = new javax.swing.JCheckBox();
         pnPessoaJuridica = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        cbPessoaJuridicaEmpresaNaoCadastrada = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        cbxPessoaJuridicaNome = new javax.swing.JComboBox();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tfPessoaJuridicaRazaoSocial = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tfPessoaJuridicaNomeFantasia = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        tfPessoaJuridicaCNPJ = new javax.swing.JFormattedTextField();
         jLabel19 = new javax.swing.JLabel();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
-        jButton4 = new javax.swing.JButton();
+        tfPessoaJuridicaTelefone = new javax.swing.JFormattedTextField();
+        btPessoaJuridicaCadastrarEmpresa = new javax.swing.JButton();
+        cbPessoaJuridicaEmpresaCadastrada = new javax.swing.JCheckBox();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -144,6 +167,11 @@ public class TelaIncial extends javax.swing.JFrame {
         jScrollPane1.setViewportView(taEquipamentoDescricao);
 
         btEquipamentoSair.setText("Sair");
+        btEquipamentoSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEquipamentoSairActionPerformed(evt);
+            }
+        });
 
         btEquipamentoCadastrar.setText("Cadastrar");
 
@@ -229,11 +257,17 @@ public class TelaIncial extends javax.swing.JFrame {
 
         jLabel7.setText("Cadastro Pessoa Fisica");
 
-        jCheckBox2.setText("Pessoa Nao cadastrada:");
+        btgPessoaCadastro.add(cbFisicaPessoaNaoCadastrada);
+        cbFisicaPessoaNaoCadastrada.setText("Pessoa Nao cadastrada:");
+        cbFisicaPessoaNaoCadastrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFisicaPessoaNaoCadastradaActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Nome:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxPessoaFisicaNome.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel9.setText("Cadastrar Nova Pessoa");
 
@@ -242,7 +276,7 @@ public class TelaIncial extends javax.swing.JFrame {
         jLabel11.setText("Telefone:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+            tfFisicaPessoaTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -250,12 +284,20 @@ public class TelaIncial extends javax.swing.JFrame {
         jLabel12.setText("CPF:");
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            tfFisicaPessoaCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        jButton3.setText("Cadastrar");
+        btFisicaPessoaCadastrarPessoa.setText("Cadastrar Pessoa");
+
+        btgPessoaCadastro.add(cbFisicaPessoaCadastrada);
+        cbFisicaPessoaCadastrada.setText("Pessoa Cadastrada");
+        cbFisicaPessoaCadastrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFisicaPessoaCadastradaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnPessoaFisicaLayout = new javax.swing.GroupLayout(pnPessoaFisica);
         pnPessoaFisica.setLayout(pnPessoaFisicaLayout);
@@ -270,26 +312,29 @@ public class TelaIncial extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfFisicaPessoaTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnPessoaFisicaLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnPessoaFisicaLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jCheckBox2)
+                                .addComponent(cbxPessoaFisicaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnPessoaFisicaLayout.createSequentialGroup()
+                                .addComponent(cbFisicaPessoaNaoCadastrada)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbFisicaPessoaCadastrada))
                             .addGroup(pnPessoaFisicaLayout.createSequentialGroup()
                                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel12))
                                 .addGap(18, 18, 18)
                                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2)
+                                    .addComponent(tfFisicaPessoaNome)
                                     .addGroup(pnPessoaFisicaLayout.createSequentialGroup()
-                                        .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfFisicaPessoaCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPessoaFisicaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +342,7 @@ public class TelaIncial extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addGap(134, 134, 134))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPessoaFisicaLayout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btFisicaPessoaCadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))))
         );
         pnPessoaFisicaLayout.setVerticalGroup(
@@ -306,27 +351,29 @@ public class TelaIncial extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
+                .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbFisicaPessoaNaoCadastrada)
+                    .addComponent(cbFisicaPessoaCadastrada))
                 .addGap(18, 18, 18)
                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxPessoaFisicaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfFisicaPessoaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfFisicaPessoaCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(pnPessoaFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfFisicaPessoaTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(btFisicaPessoaCadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -335,31 +382,49 @@ public class TelaIncial extends javax.swing.JFrame {
 
         jLabel13.setText("Cadastro Pessoa Juridica");
 
-        jCheckBox3.setText("Empresa Não Cadastrada");
+        btgPessoaJuridicaCadastro.add(cbPessoaJuridicaEmpresaNaoCadastrada);
+        cbPessoaJuridicaEmpresaNaoCadastrada.setText("Empresa Não Cadastrada");
+        cbPessoaJuridicaEmpresaNaoCadastrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPessoaJuridicaEmpresaNaoCadastradaActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("Nome:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxPessoaJuridicaNome.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel15.setText("Cadastrar Nova Empresa");
 
         jLabel16.setText("Razão Social:");
 
-        jTextField3.setText("jTextField3");
-
         jLabel17.setText("Nome Fantasia");
-
-        jTextField4.setText("jTextField4");
 
         jLabel18.setText("CNPJ:");
 
-        jFormattedTextField3.setText("jFormattedTextField3");
+        try {
+            tfPessoaJuridicaCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel19.setText("Telefone:");
 
-        jFormattedTextField4.setText("jFormattedTextField4");
+        try {
+            tfPessoaJuridicaTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
-        jButton4.setText("Cadastrar");
+        btPessoaJuridicaCadastrarEmpresa.setText("Cadastrar Empresa");
+
+        btgPessoaJuridicaCadastro.add(cbPessoaJuridicaEmpresaCadastrada);
+        cbPessoaJuridicaEmpresaCadastrada.setText("Empresa Cadastrada");
+        cbPessoaJuridicaEmpresaCadastrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPessoaJuridicaEmpresaCadastradaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnPessoaJuridicaLayout = new javax.swing.GroupLayout(pnPessoaJuridica);
         pnPessoaJuridica.setLayout(pnPessoaJuridicaLayout);
@@ -367,44 +432,49 @@ public class TelaIncial extends javax.swing.JFrame {
             pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
-                                            .addComponent(jLabel14)
-                                            .addGap(27, 27, 27)
-                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jCheckBox3)))
-                                .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
-                                    .addGap(108, 108, 108)
-                                    .addComponent(jLabel15))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPessoaJuridicaLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jLabel16)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
+                        .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
-                                .addContainerGap()
+                                .addGap(21, 21, 21)
+                                .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(cbxPessoaJuridicaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
+                                        .addComponent(cbPessoaJuridicaEmpresaNaoCadastrada)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cbPessoaJuridicaEmpresaCadastrada))))
+                            .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addComponent(jLabel15))
+                            .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPessoaJuridicaLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfPessoaJuridicaRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
                                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel17)
                                     .addComponent(jLabel18)
                                     .addComponent(jLabel19))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(22, 22, 22)
                                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField4)
-                                        .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
-                                            .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE)))))))
-                    .addGroup(pnPessoaJuridicaLayout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                                    .addComponent(tfPessoaJuridicaNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(tfPessoaJuridicaCNPJ, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                        .addComponent(tfPessoaJuridicaTelefone, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPessoaJuridicaLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btPessoaJuridicaCadastrarEmpresa)))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         pnPessoaJuridicaLayout.setVerticalGroup(
             pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,32 +482,34 @@ public class TelaIncial extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel13)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox3)
+                .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbPessoaJuridicaEmpresaNaoCadastrada)
+                    .addComponent(cbPessoaJuridicaEmpresaCadastrada))
                 .addGap(18, 18, 18)
                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxPessoaJuridicaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel15)
                 .addGap(29, 29, 29)
                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPessoaJuridicaRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfPessoaJuridicaNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
                 .addGap(18, 18, 18)
                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPessoaJuridicaCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnPessoaJuridicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPessoaJuridicaTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(37, 37, 37))
+                .addComponent(btPessoaJuridicaCadastrarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -523,57 +595,75 @@ public class TelaIncial extends javax.swing.JFrame {
         btEquipamentoCadastrar.setEnabled(false);
     }//GEN-LAST:event_rbEquipamentoSimActionPerformed
 
+    private void btEquipamentoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEquipamentoSairActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btEquipamentoSairActionPerformed
+
+    private void cbFisicaPessoaNaoCadastradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFisicaPessoaNaoCadastradaActionPerformed
+        // TODO add your handling code here:
+        cbxPessoaFisicaNome.setEnabled(false);
+        tfFisicaPessoaCPF.setEnabled(true);
+        tfFisicaPessoaNome.setEnabled(true);
+        tfFisicaPessoaTelefone.setEnabled(true);
+        btFisicaPessoaCadastrarPessoa.setEnabled(true);
+        btEquipamentoCadastrar.setEnabled(false);
+        
+    }//GEN-LAST:event_cbFisicaPessoaNaoCadastradaActionPerformed
+
+    private void cbFisicaPessoaCadastradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFisicaPessoaCadastradaActionPerformed
+        // TODO add your handling code here:
+        cbxPessoaFisicaNome.setEnabled(true);
+        tfFisicaPessoaCPF.setEnabled(false);
+        tfFisicaPessoaNome.setEnabled(false);
+        tfFisicaPessoaTelefone.setEnabled(false);
+        btFisicaPessoaCadastrarPessoa.setEnabled(false);
+        btEquipamentoCadastrar.setEnabled(true);
+    }//GEN-LAST:event_cbFisicaPessoaCadastradaActionPerformed
+
+    private void cbPessoaJuridicaEmpresaNaoCadastradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPessoaJuridicaEmpresaNaoCadastradaActionPerformed
+        // TODO add your handling code here:
+        cbxPessoaJuridicaNome.setEnabled(false);
+        tfPessoaJuridicaCNPJ.setEnabled(true);
+        tfPessoaJuridicaNomeFantasia.setEnabled(true);
+        tfPessoaJuridicaRazaoSocial.setEnabled(true);
+        tfPessoaJuridicaTelefone.setEnabled(true);
+        btPessoaJuridicaCadastrarEmpresa.setEnabled(true);
+        btEquipamentoCadastrar.setEnabled(false);
+    }//GEN-LAST:event_cbPessoaJuridicaEmpresaNaoCadastradaActionPerformed
+
+    private void cbPessoaJuridicaEmpresaCadastradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPessoaJuridicaEmpresaCadastradaActionPerformed
+        // TODO add your handling code here:
+         cbxPessoaJuridicaNome.setEnabled(true);
+        tfPessoaJuridicaCNPJ.setEnabled(false);
+        tfPessoaJuridicaNomeFantasia.setEnabled(false);
+        tfPessoaJuridicaRazaoSocial.setEnabled(false);
+        tfPessoaJuridicaTelefone.setEnabled(false);
+        btPessoaJuridicaCadastrarEmpresa.setEnabled(false);
+        btEquipamentoCadastrar.setEnabled(true);
+    }//GEN-LAST:event_cbPessoaJuridicaEmpresaCadastradaActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaIncial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaIncial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaIncial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaIncial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaIncial().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEquipamentoCadastrar;
     private javax.swing.JButton btEquipamentoSair;
+    private javax.swing.JButton btFisicaPessoaCadastrarPessoa;
+    private javax.swing.JButton btPessoaJuridicaCadastrarEmpresa;
     private javax.swing.ButtonGroup btgDoacao;
     private javax.swing.ButtonGroup btgPessoa;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.ButtonGroup btgPessoaCadastro;
+    private javax.swing.ButtonGroup btgPessoaJuridicaCadastro;
+    private javax.swing.JCheckBox cbFisicaPessoaCadastrada;
+    private javax.swing.JCheckBox cbFisicaPessoaNaoCadastrada;
+    private javax.swing.JCheckBox cbPessoaJuridicaEmpresaCadastrada;
+    private javax.swing.JCheckBox cbPessoaJuridicaEmpresaNaoCadastrada;
+    private javax.swing.JComboBox cbxPessoaFisicaNome;
+    private javax.swing.JComboBox cbxPessoaJuridicaNome;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -596,9 +686,6 @@ public class TelaIncial extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel pnEquipamento;
     private javax.swing.JPanel pnPessoaFisica;
     private javax.swing.JPanel pnPessoaJuridica;
@@ -608,6 +695,13 @@ public class TelaIncial extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbEqupamentoNao;
     private javax.swing.JTextArea taEquipamentoDescricao;
     private javax.swing.JTextField tfEquipamentoNome;
+    private javax.swing.JFormattedTextField tfFisicaPessoaCPF;
+    private javax.swing.JTextField tfFisicaPessoaNome;
+    private javax.swing.JFormattedTextField tfFisicaPessoaTelefone;
+    private javax.swing.JFormattedTextField tfPessoaJuridicaCNPJ;
+    private javax.swing.JTextField tfPessoaJuridicaNomeFantasia;
+    private javax.swing.JTextField tfPessoaJuridicaRazaoSocial;
+    private javax.swing.JFormattedTextField tfPessoaJuridicaTelefone;
     // End of variables declaration//GEN-END:variables
 
 }

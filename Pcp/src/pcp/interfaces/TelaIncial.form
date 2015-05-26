@@ -16,6 +16,10 @@
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="btgPessoaCadastro">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btgPessoaJuridicaCadastro">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -256,6 +260,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEquipamentoSairActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btEquipamentoCadastrar">
               <Properties>
@@ -335,7 +342,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextField1" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Component id="tfFisicaPessoaTelefone" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -343,9 +350,13 @@
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jComboBox1" min="-2" pref="280" max="-2" attributes="0"/>
+                                          <Component id="cbxPessoaFisicaNome" min="-2" pref="280" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="cbFisicaPessoaNaoCadastrada" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="cbFisicaPessoaCadastrada" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -353,9 +364,9 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField2" max="32767" attributes="0"/>
+                                              <Component id="tfFisicaPessoaNome" max="32767" attributes="0"/>
                                               <Group type="102" attributes="0">
-                                                  <Component id="jFormattedTextField2" min="-2" pref="119" max="-2" attributes="0"/>
+                                                  <Component id="tfFisicaPessoaCPF" min="-2" pref="119" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -363,7 +374,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="42" max="32767" attributes="0"/>
+                          <EmptySpace pref="52" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -373,7 +384,7 @@
                                   <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton3" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="btFisicaPessoaCadastrarPessoa" min="-2" pref="140" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -386,31 +397,34 @@
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cbFisicaPessoaNaoCadastrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbFisicaPessoaCadastrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbxPessoaFisicaNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfFisicaPessoaNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField2" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfFisicaPessoaCPF" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfFisicaPessoaTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="93" max="32767" attributes="0"/>
-                          <Component id="jButton3" min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace pref="101" max="32767" attributes="0"/>
+                          <Component id="btFisicaPessoaCadastrarPessoa" min="-2" pref="41" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -422,17 +436,23 @@
                     <Property name="text" type="java.lang.String" value="Cadastro Pessoa Fisica"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                <Component class="javax.swing.JCheckBox" name="cbFisicaPessoaNaoCadastrada">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btgPessoaCadastro"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Pessoa Nao cadastrada:"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbFisicaPessoaNaoCadastradaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nome:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cbxPessoaFisicaNome">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -454,14 +474,14 @@
                     <Property name="text" type="java.lang.String" value="Nome:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="tfFisicaPessoaNome">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Telefone:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+                <Component class="javax.swing.JFormattedTextField" name="tfFisicaPessoaTelefone">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="(##) ####-####" subtype="-1" type="5"/>
@@ -473,17 +493,28 @@
                     <Property name="text" type="java.lang.String" value="CPF:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
+                <Component class="javax.swing.JFormattedTextField" name="tfFisicaPessoaCPF">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="###.###.###-##" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="btFisicaPessoaCadastrarPessoa">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="text" type="java.lang.String" value="Cadastrar Pessoa"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="cbFisicaPessoaCadastrada">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btgPessoaCadastro"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Pessoa Cadastrada"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbFisicaPessoaCadastradaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -504,59 +535,66 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="jButton4" min="-2" pref="90" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox2" min="-2" pref="265" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="cbxPessoaJuridicaNome" min="-2" pref="265" max="-2" attributes="0"/>
                                               </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" min="-2" pref="252" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="cbPessoaJuridicaEmpresaNaoCadastrada" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="cbPessoaJuridicaEmpresaCadastrada" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                                          <Component id="jLabel13" min="-2" pref="172" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="tfPessoaJuridicaRazaoSocial" min="-2" pref="252" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jFormattedTextField4" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextField4" max="32767" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jFormattedTextField3" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
+                                              <Component id="tfPessoaJuridicaNomeFantasia" min="-2" pref="252" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="tfPessoaJuridicaCNPJ" alignment="0" pref="150" max="32767" attributes="0"/>
+                                                  <Component id="tfPessoaJuridicaTelefone" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="btPessoaJuridicaCadastrarEmpresa" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" min="-2" pref="172" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                          <EmptySpace pref="43" max="32767" attributes="0"/>
+                          <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -566,37 +604,40 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cbPessoaJuridicaEmpresaNaoCadastrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbPessoaJuridicaEmpresaCadastrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbxPessoaJuridicaNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfPessoaJuridicaRazaoSocial" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tfPessoaJuridicaNomeFantasia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfPessoaJuridicaCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfPessoaJuridicaTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="51" max="32767" attributes="0"/>
-                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="btPessoaJuridicaCadastrarEmpresa" min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -607,17 +648,23 @@
                     <Property name="text" type="java.lang.String" value="Cadastro Pessoa Juridica"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+                <Component class="javax.swing.JCheckBox" name="cbPessoaJuridicaEmpresaNaoCadastrada">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btgPessoaJuridicaCadastro"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Empresa N&#xe3;o Cadastrada"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPessoaJuridicaEmpresaNaoCadastradaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nome:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="cbxPessoaJuridicaNome">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -639,29 +686,25 @@
                     <Property name="text" type="java.lang.String" value="Raz&#xe3;o Social:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField3"/>
-                  </Properties>
+                <Component class="javax.swing.JTextField" name="tfPessoaJuridicaRazaoSocial">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nome Fantasia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField4"/>
-                  </Properties>
+                <Component class="javax.swing.JTextField" name="tfPessoaJuridicaNomeFantasia">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="CNPJ:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField3">
+                <Component class="javax.swing.JFormattedTextField" name="tfPessoaJuridicaCNPJ">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jFormattedTextField3"/>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##.###.###/####-##" subtype="-1" type="5"/>
+                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
@@ -669,15 +712,28 @@
                     <Property name="text" type="java.lang.String" value="Telefone:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField4">
+                <Component class="javax.swing.JFormattedTextField" name="tfPessoaJuridicaTelefone">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jFormattedTextField4"/>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="(##) ####-####" subtype="-1" type="5"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton4">
+                <Component class="javax.swing.JButton" name="btPessoaJuridicaCadastrarEmpresa">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="text" type="java.lang.String" value="Cadastrar Empresa"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="cbPessoaJuridicaEmpresaCadastrada">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btgPessoaJuridicaCadastro"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Empresa Cadastrada"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPessoaJuridicaEmpresaCadastradaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
